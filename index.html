@@ -8,7 +8,7 @@
 <meta property="og:image" content="https://hikersimon.github.io/mendoza-wedding-flights/hero.jpg">
 <style>body{margin:0}img{max-width:100%}[hidden]{display:none!important}</style>
 <title>Simon & Pili in Mendoza</title>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:opsz,wght@6..96,400;6..96,500&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Sacramento&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Allura&family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600&display=swap">
 <style>
 /* Layout: the invitation's navy card opens the page, then one working column on
    stone-coloured ground with cream paper panels. Gold Bodoni capitals for titles,
@@ -231,7 +231,14 @@ header .cardtitle { text-transform: none; letter-spacing: normal; line-height: 1
 .page-head p { max-width: 58ch; color: var(--muted); }
 
 .hero { position: relative; border-radius: 14px; overflow: hidden; background: var(--card); }
-.hero img { display: block; width: 100%; aspect-ratio: 16 / 9; object-fit: cover; object-position: center 55%; }
+.hero { aspect-ratio: 3 / 2; }
+.hero img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: center 35%; opacity: 0; transition: opacity 1.2s ease; }
+.hero img.on { opacity: 1; }
+.hero .dots { position: absolute; left: 0; right: 0; bottom: 14px; z-index: 2; display: flex; justify-content: center; gap: 8px; }
+.hero .dots button { width: 26px; height: 4px; padding: 0; border: 0; border-radius: 2px; background: rgba(255, 255, 255, 0.45); cursor: pointer; }
+.hero .dots button[aria-current="true"] { background: #ffffff; }
+@media (max-width: 640px) { .hero { aspect-ratio: 1 / 1; } }
+@media (prefers-reduced-motion: reduce) { .hero img { transition: none; } }
 .hero::after { content: ""; position: absolute; inset: 0; background: rgba(30, 36, 46, 0.32); }
 .hero .over { position: absolute; inset: 0; z-index: 1; display: flex; align-items: center; justify-content: center; font-family: var(--script); font-size: clamp(2.4rem, 8vw, 4.4rem); color: #ffffff; text-shadow: 0 2px 14px rgba(0, 0, 0, 0.45); text-align: center; padding: 0 16px; }
 .couple { text-align: center; display: flex; flex-direction: column; align-items: center; gap: 10px; }
@@ -254,6 +261,47 @@ header .cardtitle { text-transform: none; letter-spacing: normal; line-height: 1
 .faq p { color: var(--muted); font-size: 0.93rem; }
 .phones { display: flex; flex-wrap: wrap; justify-content: center; gap: 6px 28px; font-size: 0.95rem; }
 .phones span { user-select: all; letter-spacing: 0.06em; }
+
+/* Type matched to the Zola site: Allura script for every heading, a geometric sans for everything else, no capitals or italics */
+:root {
+  --display: Allura, "Snell Roundhand", "Apple Chancery", cursive;
+  --script: Allura, "Snell Roundhand", "Apple Chancery", cursive;
+  --body: "DM Sans", Circular, "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+body { font-size: 16px; line-height: 1.6; }
+h2 { text-transform: none; letter-spacing: 0; line-height: 1.1; font-size: clamp(2.5rem, 7vw, 3rem); }
+.page-head h2 { font-size: clamp(2.8rem, 8vw, 3.4rem); }
+h3 { font-weight: 600; }
+.eyebrow { font-style: normal; font-weight: 600; font-size: 0.78rem; letter-spacing: 0.08em; text-transform: uppercase; }
+.site-head .when, .field > label, .field > .lbl, .shape span, .warn, .leg .when b, .leg.wed .note, .tag, .city p, .todo .how,
+header .meta, header .names, header p.lede, .couple .place, .count div, .event .soon, .map text.sub, .map text.t, .map text.sea { font-style: normal; }
+.site-head .when, header .meta, header .names, .couple .place, .count div, .event .soon { letter-spacing: 0.04em; }
+.site-head a.brand { font-size: clamp(3.2rem, 10vw, 4.4rem); }
+nav.tabs a { font-size: 0.98rem; font-weight: 600; letter-spacing: 0; }
+header .cardtitle { line-height: 1.6; }
+header .stack { text-transform: none; letter-spacing: 0; line-height: 1; font-size: clamp(3rem, 11vw, 4.8rem); }
+header .script { font-size: clamp(3.8rem, 14vw, 6rem); margin-top: 0; }
+header p.lede { letter-spacing: 0; font-size: 1rem; line-height: 1.6; }
+.couple .names { font-size: clamp(4rem, 13vw, 6.3rem); }
+.couple .names span { font-family: var(--body); font-size: 1rem; color: var(--ink); margin: 6px 0; }
+.couple .date { text-transform: none; font-size: clamp(2.4rem, 7vw, 3rem); }
+.count b { font-family: var(--body); font-weight: 600; font-size: 1.9rem; }
+.day { font-family: var(--display); font-size: 2.5rem; line-height: 1.1; letter-spacing: 0; color: var(--ink); margin-bottom: -22px; }
+.event h3, .city h3 { text-transform: none; font-size: 2.25rem; line-height: 1.1; }
+.agent h2, .sec > .head h2 { font-size: clamp(2.3rem, 6.5vw, 2.8rem); }
+.btn { text-transform: none; letter-spacing: 0; font-size: 0.92rem; font-weight: 600; padding: 9px 18px; }
+.btn.solid { padding: 12px 24px; }
+.shape b { font-weight: 600; }
+.leg .when { letter-spacing: 0.06em; font-size: 0.8rem; }
+.leg .when b { letter-spacing: 0; font-weight: 600; }
+.leg .pair, .path { font-weight: 500; letter-spacing: 0.1em; }
+.leg.wed .pair { font-size: 2.5rem; }
+.tag { letter-spacing: 0; font-size: 0.78rem; }
+.todo .how { letter-spacing: 0; font-weight: 500; font-size: 0.82rem; }
+.agent .email { letter-spacing: 0; }
+.map text { letter-spacing: 1.5px; font-weight: 600; }
+.map text.sub, .map text.t, .map text.sea { letter-spacing: 0; font-weight: 400; }
+footer .sig { font-size: 2.8rem; }
 </style>
 
 <div class="wrap">
@@ -272,9 +320,15 @@ header .cardtitle { text-transform: none; letter-spacing: normal; line-height: 1
   </nav>
 
   <main class="page" id="p-home">
-    <div class="hero">
-      <img src="hero.jpg" alt="Our hands sharing a mate">
+    <div class="hero" id="hero">
+      <img class="on" src="hero.jpg" alt="Our hands sharing a mate" style="object-position: center 55%">
+      <img src="g0.jpg" alt="Simon and Pili holding hands" style="object-position: center 60%">
+      <img src="g2.jpg" alt="Pili hugging Simon in a park">
+      <img src="g3.jpg" alt="Simon carrying Pili on his back">
+      <img src="g4.jpg" alt="Our shadows on a wall">
+      <img src="g5.jpg" alt="Simon and Pili with a bouquet">
       <div class="over">always &amp; forever</div>
+      <div class="dots" id="dots"></div>
     </div>
     <div class="couple">
       <h1 class="names">Pili <span>&amp;</span> Simon</h1>
@@ -873,6 +927,26 @@ header .cardtitle { text-transform: none; letter-spacing: normal; line-height: 1
     show(h); window.scrollTo(0, 0);
   });
   show();
+
+  // Photo slideshow: crossfades every 5 seconds; the dashes jump to a photo
+  var slides = document.querySelectorAll('#hero img'), dots = document.getElementById('dots'), cur = 0, timer = null;
+  function go(i) {
+    cur = (i + slides.length) % slides.length;
+    Array.prototype.forEach.call(slides, function (im, k) { im.classList.toggle('on', k === cur); });
+    Array.prototype.forEach.call(dots.children, function (d, k) { d.setAttribute('aria-current', String(k === cur)); });
+  }
+  function auto() {
+    clearInterval(timer);
+    if (window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+    timer = setInterval(function () { go(cur + 1); }, 5000);
+  }
+  Array.prototype.forEach.call(slides, function (im, k) {
+    var b = document.createElement('button');
+    b.type = 'button'; b.setAttribute('aria-label', 'Show photo ' + (k + 1));
+    b.addEventListener('click', function () { go(k); auto(); });
+    dots.appendChild(b);
+  });
+  go(0); auto();
 
   // Countdown to the start of the wedding day in Mendoza (UTC-3)
   var target = Date.UTC(2027, 9, 30, 3, 0, 0);
