@@ -170,6 +170,11 @@ input[type="text"], input[type="date"], select {
 .whole .small { flex: 1 1 260px; }
 .track { background: var(--ribbon); border-radius: 14px; padding: 20px; display: flex; flex-direction: column; gap: 12px; }
 .track .row { display: flex; flex-wrap: wrap; gap: 10px; }
+.agent { background: var(--surface); border: 1px solid var(--line); border-radius: 14px; padding: 24px; display: flex; flex-direction: column; gap: 12px; }
+.agent p { max-width: 64ch; }
+.agent .contact { display: flex; flex-wrap: wrap; gap: 10px 14px; align-items: center; }
+.agent .email { font-size: 0.95rem; letter-spacing: 0.04em; overflow-wrap: anywhere; user-select: all; }
+.agent button.btn { cursor: pointer; }
 .track ol { margin: 0; padding-left: 20px; font-size: 0.88rem; display: flex; flex-direction: column; gap: 4px; max-width: 66ch; }
 
 /* routes */
@@ -231,6 +236,16 @@ footer p { font-size: 0.78rem; color: var(--muted); max-width: 66ch; }
       <circle cx="40" cy="40" r="4" fill="#F7EBC8"></circle>
     </svg>
   </header>
+
+  <section class="agent">
+    <div class="eyebrow">A friend who knows Argentina</div>
+    <h2>Questions? Ask Valeria</h2>
+    <p>Our friend Valeria Cucchiarelli is a travel agent with Argentina My Way. She hosts group trips for people looking for local Argentine experiences, and she has graciously offered to answer your questions as you think about planning your trip for the wedding.</p>
+    <div class="contact">
+      <a class="email" id="agentEmail" href="mailto:val.cucchiarelli@argentinamyway.com">val.cucchiarelli@argentinamyway.com</a>
+      <button class="btn" type="button" id="copyEmail">Copy email</button>
+    </div>
+  </section>
 
   <div class="map" aria-hidden="true">
     <svg viewBox="0 0 704 520" role="img">
@@ -683,6 +698,15 @@ footer p { font-size: 0.78rem; color: var(--muted); max-width: 66ch; }
     render();
   });
   ['arrive', 'leave', 'sclNights', 'bueNights', 'patNights'].forEach(function (id) { $(id).addEventListener('change', render); });
+  $('copyEmail').addEventListener('click', function () {
+    var btn = $('copyEmail'), addr = $('agentEmail').textContent;
+    var done = function (ok) {
+      if (!ok) { var r = document.createRange(); r.selectNodeContents($('agentEmail')); var s = getSelection(); s.removeAllRanges(); s.addRange(r); }
+      btn.textContent = ok ? 'Copied' : 'Selected, press copy';
+      setTimeout(function () { btn.textContent = 'Copy email'; }, 2500);
+    };
+    try { navigator.clipboard.writeText(addr).then(function () { done(true); }, function () { done(false); }); } catch (e) { done(false); }
+  });
   if (state.custom) $('otherCity').value = state.custom;
   render();
 })();
