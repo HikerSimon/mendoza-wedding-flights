@@ -2,11 +2,12 @@
 <html lang="en">
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<meta name="description" content="Plan your flights to Mendoza, Argentina for Simon and Pili's wedding on October 30, 2027.">
-<meta property="og:title" content="Simon &amp; Pili: Find your way to Mendoza">
-<meta property="og:description" content="Flight routes, a trip planner and things to do for our wedding on October 30, 2027.">
+<meta name="description" content="Simon and Pili are getting married in Mendoza, Argentina on October 30, 2027. Schedule, travel planning and things to do.">
+<meta property="og:title" content="Simon &amp; Pili · October 30, 2027 · Mendoza">
+<meta property="og:description" content="Schedule, flight planner and things to do for our wedding in Mendoza, Argentina.">
+<meta property="og:image" content="https://hikersimon.github.io/mendoza-wedding-flights/hero.jpg">
 <style>body{margin:0}img{max-width:100%}[hidden]{display:none!important}</style>
-<title>Mendoza Wedding Flights</title>
+<title>Simon & Pili in Mendoza</title>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:opsz,wght@6..96,400;6..96,500&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Sacramento&display=swap">
 <style>
 /* Layout: the invitation's navy card opens the page, then one working column on
@@ -75,7 +76,7 @@ header.card {
   box-shadow: 0 10px 28px rgba(45, 56, 72, 0.22);
 }
 header .meta { align-self: flex-end; text-align: right; font-style: italic; font-size: 0.78rem; letter-spacing: 0.2em; line-height: 1.9; }
-header h1 { display: flex; flex-direction: column; align-items: center; }
+header .cardtitle { display: flex; flex-direction: column; align-items: center; }
 header .names { font-style: italic; font-size: 0.8rem; letter-spacing: 0.24em; color: var(--on-card); margin-bottom: 14px; font-weight: 400; font-family: var(--body); }
 header .stack { font-family: var(--display); font-weight: 400; text-transform: uppercase; color: var(--gold); font-size: clamp(2.7rem, 10vw, 4.6rem); line-height: 0.88; letter-spacing: -0.02em; }
 header .script { font-family: var(--script); font-weight: 400; color: var(--on-card); font-size: clamp(3.4rem, 13vw, 5.6rem); line-height: 0.9; transform: rotate(-5deg); margin-top: -0.12em; }
@@ -214,15 +215,133 @@ footer p { font-size: 0.78rem; color: var(--muted); max-width: 66ch; }
   header .slice { width: 58px; height: 58px; right: 14px; bottom: 14px; }
 }
 </style>
+<style>
+/* site shell: wedding-website layout with a centred script masthead, a row of tabs, and one page per tab */
+.site-head { text-align: center; display: flex; flex-direction: column; align-items: center; gap: 4px; padding-top: 8px; }
+.site-head a.brand { font-family: var(--script); font-size: clamp(2.8rem, 9vw, 3.8rem); line-height: 1.1; color: var(--ink); text-decoration: none; }
+.site-head .when { font-style: italic; font-size: 0.8rem; letter-spacing: 0.2em; color: var(--muted); }
+nav.tabs { display: flex; flex-wrap: wrap; justify-content: center; gap: 6px 22px; border-bottom: 1px solid var(--line); padding-bottom: 14px; margin-top: -22px; }
+nav.tabs a { font-size: 0.82rem; letter-spacing: 0.08em; color: var(--ink); text-decoration: none; padding: 6px 2px; border-bottom: 2px solid transparent; white-space: nowrap; }
+nav.tabs a:hover { border-bottom-color: var(--line); }
+nav.tabs a.on { border-bottom-color: var(--gold-text); }
+header .cardtitle { text-transform: none; letter-spacing: normal; line-height: 1.65; font-size: 1rem; }
+.page { display: flex; flex-direction: column; gap: 44px; }
+.page-head { text-align: center; display: flex; flex-direction: column; align-items: center; gap: 12px; }
+.page-head h2 { font-size: clamp(2.1rem, 6vw, 2.9rem); }
+.page-head p { max-width: 58ch; color: var(--muted); }
+
+.hero { position: relative; border-radius: 14px; overflow: hidden; background: var(--card); }
+.hero img { display: block; width: 100%; aspect-ratio: 16 / 9; object-fit: cover; object-position: center 55%; }
+.hero::after { content: ""; position: absolute; inset: 0; background: rgba(30, 36, 46, 0.32); }
+.hero .over { position: absolute; inset: 0; z-index: 1; display: flex; align-items: center; justify-content: center; font-family: var(--script); font-size: clamp(2.4rem, 8vw, 4.4rem); color: #ffffff; text-shadow: 0 2px 14px rgba(0, 0, 0, 0.45); text-align: center; padding: 0 16px; }
+.couple { text-align: center; display: flex; flex-direction: column; align-items: center; gap: 10px; }
+.couple .names { font-family: var(--script); font-size: clamp(3.2rem, 11vw, 5rem); line-height: 1; font-weight: 400; }
+.couple .names span { display: block; font-size: 0.55em; color: var(--gold-text); }
+.couple .date { font-family: var(--display); font-size: clamp(1.5rem, 4.5vw, 2rem); text-transform: uppercase; line-height: 1.1; margin-top: 10px; }
+.couple .place { font-style: italic; letter-spacing: 0.2em; font-size: 0.85rem; color: var(--muted); }
+.count { display: flex; flex-wrap: wrap; justify-content: center; gap: 10px 30px; margin: 14px 0 10px; font-variant-numeric: tabular-nums; }
+.count div { font-style: italic; font-size: 0.78rem; letter-spacing: 0.14em; color: var(--muted); min-width: 60px; }
+.count b { display: block; font-family: var(--display); font-weight: 400; font-style: normal; font-size: 2.3rem; line-height: 1.1; letter-spacing: 0; color: var(--ink); }
+.cta { display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; }
+
+.event { background: var(--surface); border: 1px solid var(--line); border-radius: 14px; padding: 28px 24px; text-align: center; display: flex; flex-direction: column; align-items: center; gap: 8px; }
+.event h3 { font-family: var(--display); font-weight: 400; font-size: 1.6rem; text-transform: uppercase; line-height: 1; }
+.event .soon { font-style: italic; letter-spacing: 0.1em; color: var(--gold-text); font-size: 0.9rem; }
+.event p { max-width: 56ch; }
+.day { text-align: center; font-style: italic; letter-spacing: 0.18em; font-size: 0.9rem; color: var(--gold-text); margin-bottom: -26px; }
+.faq { display: flex; flex-direction: column; max-width: 680px; margin: 0 auto; width: 100%; }
+.faq div { display: flex; flex-direction: column; gap: 6px; padding: 20px 0; border-top: 1px solid var(--line); }
+.faq p { color: var(--muted); font-size: 0.93rem; }
+.phones { display: flex; flex-wrap: wrap; justify-content: center; gap: 6px 28px; font-size: 0.95rem; }
+.phones span { user-select: all; letter-spacing: 0.06em; }
+</style>
 
 <div class="wrap">
-  <header class="card">
+  <div class="site-head">
+    <a class="brand" href="#home">Simon &amp; Pili</a>
+    <div class="when">October 30, 2027 · Mendoza, Argentina</div>
+  </div>
+  <nav class="tabs" aria-label="Site">
+    <a href="#home" class="on">Home</a>
+    <a href="#schedule">Schedule</a>
+    <a href="#rsvp">RSVP</a>
+    <a href="#faqs">FAQs</a>
+    <a href="#travel">Travel</a>
+    <a href="#things-to-do">Things To Do</a>
+    <a href="#registry">Registry</a>
+  </nav>
+
+  <main class="page" id="p-home">
+    <div class="hero">
+      <img src="hero.jpg" alt="Our hands sharing a mate">
+      <div class="over">always &amp; forever</div>
+    </div>
+    <div class="couple">
+      <h1 class="names">Pili <span>&amp;</span> Simon</h1>
+      <div class="date">October 30, 2027</div>
+      <div class="place">Mendoza, Argentina</div>
+      <div class="count" id="count" aria-label="Time until the wedding">
+        <div><b id="cd">–</b>days</div><div><b id="ch">–</b>hours</div><div><b id="cm">–</b>minutes</div><div><b id="cs">–</b>seconds</div>
+      </div>
+      <div class="cta">
+        <a class="btn solid" href="#travel">Plan your trip</a>
+        <a class="btn" href="#rsvp">RSVP</a>
+      </div>
+    </div>
+  </main>
+
+  <main class="page" id="p-schedule" hidden>
+    <div class="page-head">
+      <h2>Schedule</h2>
+      <p>We want you to feel relaxed and prepared on our big day, no scrambling, no guessing! Below you'll find everything you need to know about the flow of the day as we confirm it. We can't wait to celebrate every moment with you.</p>
+    </div>
+    <div class="day">Saturday, October 30, 2027</div>
+    <div class="event">
+      <h3>The wedding</h3>
+      <div class="soon">Venue, times and dress code coming soon</div>
+      <p>Mendoza, Argentina. We'll post the full flow of the day here as soon as it's confirmed. For now, plan to be in Mendoza by Thursday, October 28 or Friday, October 29.</p>
+      <div class="cta"><a class="btn" href="#travel">Plan your flights</a></div>
+    </div>
+  </main>
+
+  <main class="page" id="p-rsvp" hidden>
+    <div class="page-head">
+      <h2>RSVP</h2>
+      <p>RSVPs for Mendoza aren't open yet. We'll let everyone know as soon as they are. In the meantime, if you have a question or already know you're coming, reach out to either of us.</p>
+    </div>
+    <div class="event">
+      <h3>Get in touch</h3>
+      <div class="phones"><div>Simon: <span>610-613-1225</span></div><div>Pili: <span>610-613-2808</span></div></div>
+    </div>
+  </main>
+
+  <main class="page" id="p-faqs" hidden>
+    <div class="page-head">
+      <h2>FAQs</h2>
+      <p>We know you might have a few questions, and we've got answers! Everything we know so far about our wedding in Mendoza is right here.</p>
+    </div>
+    <div class="faq">
+      <div><h3>When should I arrive?</h3><p>The wedding is Saturday, October 30, 2027. We suggest landing in Mendoza by Thursday the 28th or Friday the 29th so a delayed connection doesn't cost you the party. The <a href="#travel">Travel</a> tab builds an itinerary around your dates.</p></div>
+      <div><h3>How do I get to Mendoza?</h3><p>There are no nonstop flights from North America. Everyone connects through Santiago, Buenos Aires or Panama City. The <a href="#travel">Travel</a> tab shows the best routes from your city and opens a live fare search.</p></div>
+      <div><h3>What is the dress code?</h3><p>Coming soon! We'll post it on the Schedule tab along with the venue and times.</p></div>
+      <div><h3>How do I RSVP?</h3><p>RSVPs for Mendoza aren't open yet. We'll share the details and deadline as soon as they are.</p></div>
+      <div><h3>Are children invited?</h3><p>We have chosen to limit children to those in our immediate family. We'll make it as clear as possible on your invitation. We hope this advance notice means you're still able to join us. Thank you for your understanding :)</p></div>
+      <div><h3>Can I bring a plus-one?</h3><p>If you've been given a plus-one, your guest's name will be listed on your invitation. Otherwise, we kindly ask that guests come solo; we would like to keep the wedding an intimate event with close family and friends. Thank you for understanding :)</p></div>
+      <div><h3>Do I need a visa?</h3><p>US and Canadian passport holders can visit Argentina and Chile as tourists without a visa. Check that your passport has six months left, and confirm the rules for your own nationality.</p></div>
+      <div><h3>What will the weather be like?</h3><p>Late October is spring in Mendoza: warm, sunny days around 75°F (24°C) and cool evenings. Bring a layer for the night.</p></div>
+      <div><h3>I want to see more of Argentina. Where do I start?</h3><p>The <a href="#things-to-do">Things To Do</a> tab covers Mendoza, Santiago, Bariloche and Buenos Aires. Our friend Valeria, a travel agent, has also offered to answer questions; her details are on the <a href="#travel">Travel</a> tab.</p></div>
+      <div><h3>Who can I contact with questions?</h3><p>Please don't hesitate to reach out to either of us. Simon: 610-613-1225. Pili: 610-613-2808.</p></div>
+    </div>
+  </main>
+
+  <main class="page" id="p-travel" hidden>
+    <header class="card">
     <div class="meta">October 30, 2027<br>Mendoza, Argentina</div>
-    <h1>
+    <h2 class="cardtitle">
       <span class="names">Simon &amp; Pili's wedding</span>
       <span class="stack">Find your<br>way to</span>
       <span class="script">Mendoza</span>
-    </h1>
+    </h2>
     <p class="lede">Pick where you're flying from and how much of South America you want to see. You'll get a leg-by-leg plan, the routes worth checking from your city, and links that open a live fare search with your dates filled in.</p>
     <svg class="slice" viewBox="0 0 80 80" aria-hidden="true">
       <circle cx="40" cy="40" r="38" fill="#F7EBC8"></circle>
@@ -237,7 +356,7 @@ footer p { font-size: 0.78rem; color: var(--muted); max-width: 66ch; }
     </svg>
   </header>
 
-  <section class="agent">
+    <section class="agent">
     <div class="eyebrow">A friend who knows Argentina</div>
     <h2>Questions? Ask Valeria</h2>
     <p>Our friend Valeria Cucchiarelli is a travel agent with Argentina My Way. She hosts group trips for people looking for local Argentine experiences, and she has graciously offered to answer your questions as you think about planning your trip for the wedding.</p>
@@ -247,7 +366,13 @@ footer p { font-size: 0.78rem; color: var(--muted); max-width: 66ch; }
     </div>
   </section>
 
-  <div class="map" aria-hidden="true">
+    <div class="event">
+      <h3>Hotels and getting to the venue</h3>
+      <div class="soon">Coming soon</div>
+      <p>We'll share hotel recommendations and transport to the venue here once they're confirmed.</p>
+    </div>
+
+    <div class="map" aria-hidden="true">
     <svg viewBox="0 0 704 520" role="img">
       <!-- Equirectangular: x = (lon + 76) * 32, y = (-lat - 30.5) * 40. Window 76W-54W, 30.5S-43.5S. -->
       <rect class="water" x="0" y="0" width="704" height="520"></rect>
@@ -290,7 +415,7 @@ footer p { font-size: 0.78rem; color: var(--muted); max-width: 66ch; }
     </svg>
   </div>
 
-  <section class="planner" aria-label="Trip planner">
+    <section class="planner" aria-label="Trip planner">
     <div class="field">
       <div class="lbl">Where are you flying from?</div>
       <div class="chips" id="origins"></div>
@@ -335,7 +460,7 @@ footer p { font-size: 0.78rem; color: var(--muted); max-width: 66ch; }
     <div class="warn" id="warn" hidden></div>
   </section>
 
-  <section class="sec" aria-live="polite">
+    <section class="sec" aria-live="polite">
     <div class="head">
       <div class="eyebrow">Your trip</div>
       <h2 id="tripTitle"></h2>
@@ -346,7 +471,7 @@ footer p { font-size: 0.78rem; color: var(--muted); max-width: 66ch; }
     <div class="track" id="track"></div>
   </section>
 
-  <section class="sec">
+    <section class="sec">
     <div class="head">
       <div class="eyebrow">Routes worth checking</div>
       <h2 id="routesTitle"></h2>
@@ -355,7 +480,28 @@ footer p { font-size: 0.78rem; color: var(--muted); max-width: 66ch; }
     <div class="routes" id="routes"></div>
   </section>
 
-  <section class="sec">
+    <section class="sec">
+    <div class="head">
+      <div class="eyebrow">Good to know</div>
+      <h2>Before you book</h2>
+    </div>
+    <div class="know">
+      <div><h3>Seeing no flights yet?</h3><p>Airlines release seats about 11 months ahead. Late October 2027 dates start appearing from December 2026, and the smaller South American carriers load later than that.</p></div>
+      <div><h3>Flights south leave at night</h3><p>Most long-haul flights depart in the evening and land the next morning. The plan above already has you leaving home the day before you arrive.</p></div>
+      <div><h3>Book the hop on one ticket if you can</h3><p>If the Santiago or Buenos Aires connection is on the same booking as your long flight, the airline rebooks you when something runs late. Separate tickets need a buffer of several hours, or a night.</p></div>
+      <div><h3>Changing airports in Buenos Aires</h3><p>If you connect to Mendoza the same day, look for a flight leaving from Ezeiza. Switching to Aeroparque means a cross-town transfer and at least four hours between flights.</p></div>
+      <div><h3>The Andes bus</h3><p>Santiago to Mendoza by road takes 6 to 8 hours including the border stop. Snow can close the pass in winter. By late October it is normally open.</p></div>
+      <div><h3>Passports</h3><p>US and Canadian passport holders can visit Argentina and Chile as tourists without a visa. Check your passport has six months left, and confirm the rules for your own nationality.</p></div>
+    </div>
+  </section>
+  </main>
+
+  <main class="page" id="p-things-to-do" hidden>
+    <div class="page-head">
+      <h2>Things To Do</h2>
+      <p>You're coming a long way, so make a trip of it. Here's what we love in Mendoza, and where to spend extra days on either side of the wedding.</p>
+    </div>
+    <section class="sec">
     <div class="head">
       <div class="eyebrow">While you're there</div>
       <h2>Things to do in Mendoza</h2>
@@ -373,7 +519,7 @@ footer p { font-size: 0.78rem; color: var(--muted); max-width: 66ch; }
     </div>
   </section>
 
-  <section class="sec">
+    <section class="sec">
     <div class="head">
       <div class="eyebrow">Four stops</div>
       <h2>Where to spend the extra days</h2>
@@ -418,21 +564,15 @@ footer p { font-size: 0.78rem; color: var(--muted); max-width: 66ch; }
       </div>
     </div>
   </section>
+  </main>
 
-  <section class="sec">
-    <div class="head">
-      <div class="eyebrow">Good to know</div>
-      <h2>Before you book</h2>
+  <main class="page" id="p-registry" hidden>
+    <div class="page-head">
+      <h2>Registry</h2>
+      <p>As a couple, some of our most cherished memories have been made while exploring the world together, and we can't wait to keep adding to those memories as a married couple. Having you with us in Mendoza is the best gift. For those who'd like to give something more, our registry and honeymoon fund are on Zola.</p>
+      <div class="cta"><a class="btn solid" target="_blank" rel="noopener" href="https://www.zola.com/wedding/simonandpili/registry">View our registry</a></div>
     </div>
-    <div class="know">
-      <div><h3>Seeing no flights yet?</h3><p>Airlines release seats about 11 months ahead. Late October 2027 dates start appearing from December 2026, and the smaller South American carriers load later than that.</p></div>
-      <div><h3>Flights south leave at night</h3><p>Most long-haul flights depart in the evening and land the next morning. The plan above already has you leaving home the day before you arrive.</p></div>
-      <div><h3>Book the hop on one ticket if you can</h3><p>If the Santiago or Buenos Aires connection is on the same booking as your long flight, the airline rebooks you when something runs late. Separate tickets need a buffer of several hours, or a night.</p></div>
-      <div><h3>Changing airports in Buenos Aires</h3><p>If you connect to Mendoza the same day, look for a flight leaving from Ezeiza. Switching to Aeroparque means a cross-town transfer and at least four hours between flights.</p></div>
-      <div><h3>The Andes bus</h3><p>Santiago to Mendoza by road takes 6 to 8 hours including the border stop. Snow can close the pass in winter. By late October it is normally open.</p></div>
-      <div><h3>Passports</h3><p>US and Canadian passport holders can visit Argentina and Chile as tourists without a visa. Check your passport has six months left, and confirm the rules for your own nationality.</p></div>
-    </div>
-  </section>
+  </main>
 
   <footer>
     <div class="sig">Simon &amp; Pili</div>
@@ -709,5 +849,40 @@ footer p { font-size: 0.78rem; color: var(--muted); max-width: 66ch; }
   });
   if (state.custom) $('otherCity').value = state.custom;
   render();
+})();
+</script>
+<script>
+(function () {
+  var TABS = ['home', 'schedule', 'rsvp', 'faqs', 'travel', 'things-to-do', 'registry'];
+  function show(h) {
+    if (typeof h !== 'string') h = (location.hash || '').replace('#', '');
+    if (TABS.indexOf(h) < 0) h = 'home';
+    TABS.forEach(function (t) { document.getElementById('p-' + t).hidden = t !== h; });
+    Array.prototype.forEach.call(document.querySelectorAll('nav.tabs a'), function (a) {
+      var on = a.getAttribute('href') === '#' + h;
+      a.classList.toggle('on', on);
+      if (on) a.setAttribute('aria-current', 'page'); else a.removeAttribute('aria-current');
+    });
+  }
+  window.addEventListener('hashchange', function () { show(); window.scrollTo(0, 0); });
+  document.addEventListener('click', function (e) {
+    var a = e.target.closest('a[href^="#"]'); if (!a) return;
+    var h = a.getAttribute('href').slice(1); if (TABS.indexOf(h) < 0) return;
+    e.preventDefault();
+    if (location.hash !== '#' + h) { try { location.hash = h; } catch (err) {} }
+    show(h); window.scrollTo(0, 0);
+  });
+  show();
+
+  // Countdown to the start of the wedding day in Mendoza (UTC-3)
+  var target = Date.UTC(2027, 9, 30, 3, 0, 0);
+  function tick() {
+    var s = Math.max(0, Math.floor((target - Date.now()) / 1000));
+    document.getElementById('cd').textContent = Math.floor(s / 86400);
+    document.getElementById('ch').textContent = Math.floor(s % 86400 / 3600);
+    document.getElementById('cm').textContent = Math.floor(s % 3600 / 60);
+    document.getElementById('cs').textContent = s % 60;
+  }
+  tick(); setInterval(tick, 1000);
 })();
 </script>
